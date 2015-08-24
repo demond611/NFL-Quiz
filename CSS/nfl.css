@@ -56,6 +56,10 @@ input[type='submit'] {
 	margin-bottom: 0;
 }
 
+.submit-btns > #answer-btn {
+	margin-right: 3em;
+}
+
 #question-number, #fantasy-question, #question-responses {
 	padding: 0 0 1em 0;
 }
@@ -71,10 +75,6 @@ input[type='submit'] {
 	font-size: smaller;
 	padding: .875em 0;
 }
-
-
-
-
 
 /*** MEDIA QUERIES ***/
 @media (max-width: 900px) {
