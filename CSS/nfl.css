@@ -38,7 +38,7 @@ input[type='submit'] {
 }
 
 .welcome-info, .question-info, .results-info, .header-info, .footer-info {
-	padding: 1em 2.5em;
+	padding: 1em 0.75em;
 }
 
 .welcome-info, .results-info {
@@ -78,15 +78,11 @@ input[type='submit'] {
 
 /*** MEDIA QUERIES ***/
 @media (max-width: 900px) {
-	.welcome-info, .question-info, .results-info, .header-info, .footer-info {
-		padding: 1em 0.75em;
-	}
-
 	#question-number {
 		text-align: center;
 	}
 
 	#fantasy-question, #question-responses {
-		text-align: justify;
+		text-align: left;
 	}
 }
