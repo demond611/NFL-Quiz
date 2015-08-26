@@ -16,6 +16,10 @@ h1 {
 	margin-top: 0;
 }
 
+ol {
+	list-style-type: none;
+}
+
 input[type='submit'] {
 	background: #CFAA52;
 	padding: 10px 15px;
@@ -35,6 +39,10 @@ input[type='submit'] {
 
 .header-info, .results-info {
 	text-align: center;
+}
+
+.header-info {
+	border: 2px solid red;
 }
 
 .welcome-info, .question-info, .results-info, .header-info, .footer-info {
@@ -64,6 +72,10 @@ input[type='submit'] {
 	font-size: 0.875em;
 	font-weight: 600;
 	color: #CFAA52;
+}
+
+#answer-btn {
+	margin-right: 6em;
 }
 
 .footer-info {
