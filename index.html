@@ -28,12 +28,12 @@
 		<!-- QUIZ QUESTIONS -->
 		<section id="questions" class="question-info">
 			<div class="quiz-questions">
-				<div id="question-number">
-					Question <span id="number">1</span>
-				</div>
-				<div id="fantasy-question"></div>
-				<ol id="question-responses"></ol>
-				<form>
+				<form id="quiz-form">
+					<div id="question-number">
+						Question <span id="number"></span> of <span class="totalNumber"></span>
+					</div>
+					<div id="fantasy-question"></div>
+					<ol id="question-responses"></ol>				
 					<p class="submit-btns">
 						<input type="submit" id="answer-btn" class="button" name="submit" value="Next" />
 						<input type="submit" id="cancel-btn" class="button" name="submit" value="Cancel"/>
@@ -46,9 +46,9 @@
 		<section id="results" class="results-info">
 			<h1>Results</h1>
 			<p>
-				You got <span id="correct">0</span> out of 10 questions correct.
+				You got <span id="correct"></span> out of <span class="totalNumber"></span> questions correct.
 			</p>
-			<p class="results-statement"></p>
+			<p><h2 id="results-statement"></h2></p>
 			<form>
 				<p class="submit-btns">
 					<input type="submit" id="results-btn" class="button" name="submit" value="Back to Welcome"/>
