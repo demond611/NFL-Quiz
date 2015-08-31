@@ -109,8 +109,7 @@ $(function (){
 		// INITIAL QUESTION
 		$("#number").text(quizQuestions[0].questionNum);
 		$(".totalNumber").text(quizQuestions.length);
-
-		$("#fantasy-question").text(quizQuestions[counter].question);
+		$("#fantasy-question").text(quizQuestions[0].question);
 
 		var answerChoices = $.each(quizQuestions[counter].choices, function (index,value){value});
 		var quizCounter = quizQuestions[counter].questionNum;
@@ -143,11 +142,16 @@ $(function (){
 			
 			}		
 		});
+
+		$("#cancel-btn").click(function (){
+			preventDefault(event);
+			reStartQuiz();
+		});
 	}
 
-	$("#results-btn, #cancel-btn").click(function (){
-		reStartQuiz();
-	});
+	function preventDefault (event){
+		return event.preventDefault();
+	}
 
 	function checkAnswer () {
 		var userAns = $("[type='radio']:checked").data('quesval');
@@ -176,23 +180,13 @@ $(function (){
 		});
 	}
 
-	function preventDefault (event){
-		return event.preventDefault();
-	}
-
-	function reStartQuiz () {
-		counter = 0;
-		numberOfQuestions = 0;
-		userAnswers = new Array();
-		$("#results, #questions").hide();
-		$("#welcome").show();
-	}
-
 	function displayResults () {
 		$("#welcome, #questions").hide();
 		$("#results").show();
+
 		$("#correct").text(correctAnswers);
 		$(".totalNumber").text(quizQuestions.length);
+
 		if (correctAnswers == 0){
 			$("#results-statement").text("Wow...That's just terrible.");
 		} else if (correctAnswers <= 3){
@@ -204,6 +198,20 @@ $(function (){
 		} else {
 			$("#results-statement").text("10 out of 10...You won your league title I bet.");
 		}
+
+		$("#results-btn").click(function (){
+			preventDefault(event);
+			reStartQuiz();
+		});
+	}
+
+	function reStartQuiz () {
+		counter = 0;
+		numberOfQuestions = 0;
+		correctAnswers = 0;
+		$("#question-responses").text("");
+		$("#results, #questions").hide();
+		$("#welcome").show();
 	}
 
 });
